@@ -11,13 +11,17 @@ def saludo(request):
 def saludar_a(request, nombre):
     return HttpResponse(f"Hola como estas {nombre.capitalize()}")
 
+def mostrar_index(request):
+    return render(request, "mi_app/index.html", {"mi_titulo": "Hola este es mi primer website!!!"})
+
 def saludo_personalizado(request):
-    context = {}
+    pass
+    # context = {}
 
-    if request.GET:
-        context["nombre"] = request.GET["nombre"]
+    # if request.GET:
+    #     context["nombre"] = request.GET["nombre"]
 
-    return render(request, "mi_app/index.html", context)
+    # return render(request, "mi_app/index.html", context)
 
 def listar_cursos(request): #vista
     context = {}
